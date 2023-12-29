@@ -695,6 +695,68 @@ product(2, 3, 2) # this will give output of 12
 product(2.2, 3.4, 2.3) # this will give output of 17.985999999999997
 
 
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
 
+    def get_title(self):
+        return self.title
+
+    def get_author(self):
+        return self.author
+
+# Open/Closed Principle (OCP)
+class Shape:
+    def area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+# Liskov Substitution Principle (LSP)
+class Bird:
+    def fly(self):
+        pass
+
+class Sparrow(Bird):
+    def fly(self):
+        return "Sparrow flying"
+
+class Ostrich(Bird):
+    def fly(self):
+        return "Ostrich cannot fly"
+
+# Interface Segregation Principle (ISP)
+class Machine:
+    def print(self):
+        pass
+
+class Scanner:
+    def scan(self):
+        pass
+
+class Printer(Machine):
+    def print(self):
+        return "Printing document"
+
+class Photocopier(Machine, Scanner, Printer):
+    def scan(self):
+        return "Scanning document"
+
+    def print(self):
+        return "Printing document"
 
 
